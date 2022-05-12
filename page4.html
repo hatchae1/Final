@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Future Plans</title>
+    <script>
+
+        //BUTTON FETCHED
+        function getSpacePeopleFunction() {
+    
+                //http://open-notify.org/Open-Notify-API/People-In-Space/
+        fetch('http://api.open-notify.org/astros.json')
+        .then(response =>{
+            return response.json();
+        }).then(data =>{
+    
+            //Empty people table variable
+            var buttonfetchedhtmltable = "<h1>Pretty Smart People</h1><table id='spacepeople'><hr><td>Person</td><td>Location</td></hr>"
+                //console.log(data['people']);
+                //Iterate
+                for (var i=0; i < data['people'].length; i++) {
+                    //Loop through the people
+                   //console.log(data['people'][i]['name'])
+                   
+                   buttonfetchedhtmltable = buttonfetchedhtmltable + "<tr><td>"+  data['people'][i]['name']  +"</td><td>"+  data['people'][i]['craft']  +"</td></tr>"
+            }
+            //Finish the Table
+            buttonfetchedhtmltable = buttonfetchedhtmltable + "</table><div class='menudiv'><button id='hidespacepeople' onclick='hideSpacePeopleFunction()'>Hide This Table</button></div>"
+            //Update the page
+            document.getElementById("ButtonFetchedPeopleInSpace").innerHTML = buttonfetchedhtmltable;
+        })
+            
+            
+            //Update the page
+            //document.getElementById("ButtonFetchedPeopleInSpace").innerHTML = buttonfetchedhtmltable;
+    
+    
+    
+    
+        }
+        function hideSpacePeopleFunction() {
+            document.getElementById("ButtonFetchedPeopleInSpace").innerHTML = "Gone";
+
+        }
+
+    
+    </script>
+
+
+
+
+
+</head>
+<body>
+    <div class="menudiv"> 
+        <button><a href="index.html">Home</a></button>
+        <button><a href="contact.html">Contact</a></button>
+      </div>
+    <h1>Future Plans</h1>
+
+    <div class="w3-container w3-cell w3-half">
+        <h2>CU Boulder</h2>
+        <p> After this year, in the fall, i will be transferring to CU Boulder. I want to study computer science with a minor in business.
+            Combining the 2 is going to be perfect for any job in the technology space.
+        </p>
+
+      </div>
+    
+      <div class="w3-container w3-cell w3-half">
+        <h2>Career</h2>
+        <p> For my future career, I want to work at a big company and work in groups of people to build new technology.
+        </p>
+
+      </div>
+
+      <h1 id="center">Beyond Career </h1>
+      <div class="menudiv"><button id='getspacepeople' onclick="getSpacePeopleFunction()">Ill be like these people</button></div>
+      <br>
+      <div class="menudiv" id="ButtonFetchedPeopleInSpace"></div>
+
+
+      
+
+
+
+
+
+    
+    
+</body>
+</html>

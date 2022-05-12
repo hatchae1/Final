@@ -1,3 +1,9 @@
+
+* {
+    font-family: 'Oswald', sans-serif;
+}
+
+
 body {
     background-color:salmon;
 }
@@ -5,8 +11,93 @@ body {
 h1 {
     text-align: center;
     font-size: 70px;
+    text-decoration: underline;
 }
 
-h2 {
+h2, h1 {
+    text-decoration: underline;
+
+}
+
+
+img {
+    height: 300px;
     
+    
+    
+}
+
+button {
+    background-color: #429eff;
+
+}
+
+#title {
+    font-size: 250px;
+}
+
+
+
+  /* mouse over link */
+  a:hover {
+    color: rgb(255, 0, 0);
+  }
+
+  div.menudiv {
+      text-align: center;
+      margin: auto;
+      width: 50%;
+      padding: 20px;
+  }
+
+  #spacepeople {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    
+  }
+
+
+#spacepeople td, #spacepeople th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #spacepeople tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #spacepeople tr:hover {background-color: #ddd;}
+  
+  #spacepeople th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+#img1 {
+    float:right;
+    border-color: white;
+    height: 350px;
+    padding-right: 50px;
+
+}
+
+#img2 {
+    float:left;
+    border-color: white;
+    height: 350px;
+    padding-left: 50px;
+}
+
+#songs {
+    font-size: 20px;
+}
+
+#form {
+    font-size: 50px;
+}
+
+#center {
+    text-align: center;
 }

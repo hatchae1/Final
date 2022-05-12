@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+<script>
+	//http://open-notify.org/Open-Notify-API/People-In-Space/
+	fetch('http://api.open-notify.org/astros.json')
+	.then(response =>{
+	    return response.json();
+	}).then(data =>{
+
+		//Empty people table variable
+		var htmltable = "<table><hr><td>Person</td><td>Location</td></hr>"
+	    	//console.log(data['people']);
+	    	//Iterate
+	    	for (var i=0; i < data['people'].length; i++) {
+	    		//Loop through the people
+	   		//console.log(data['people'][i]['name'])
+	   		
+	   		htmltable = htmltable + "<tr><td>"+  data['people'][i]['name']  +"</td><td>"+  data['people'][i]['craft']  +"</td></tr>"
+		}
+		//Finish the Table
+		htmltable = htmltable + "</table>"
+		//Update the page
+		document.getElementById("peopleinspace").innerHTML = htmltable;
+	})
+	
+
+	
+</script>
+
+
+<script>
+
+	//BUTTON FETCHED
+	function getSpacePeopleFunction() {
+
+			//http://open-notify.org/Open-Notify-API/People-In-Space/
+	fetch('http://api.open-notify.org/astros.json')
+	.then(response =>{
+	    return response.json();
+	}).then(data =>{
+
+		//Empty people table variable
+		var buttonfetchedhtmltable = "<table><hr><td>Person</td><td>Location</td></hr>"
+	    	//console.log(data['people']);
+	    	//Iterate
+	    	for (var i=0; i < data['people'].length; i++) {
+	    		//Loop through the people
+	   		//console.log(data['people'][i]['name'])
+	   		
+	   		buttonfetchedhtmltable = buttonfetchedhtmltable + "<tr><td>"+  data['people'][i]['name']  +"</td><td>"+  data['people'][i]['craft']  +"</td></tr>"
+		}
+		//Finish the Table
+		buttonfetchedhtmltable = buttonfetchedhtmltable + "</table>"
+		//Update the page
+		document.getElementById("ButtonFetchedPeopleInSpace").innerHTML = buttonfetchedhtmltable;
+	})
+		
+		
+		//Update the page
+		//document.getElementById("ButtonFetchedPeopleInSpace").innerHTML = buttonfetchedhtmltable;
+
+
+
+
+	}
+
+</script>
+
+
+</head>
+
+<body>
+
+<h2>Maybe one day I'll be one of these people with my mad html coding skillz!</h2>
+</ br>
+
+<h1>Who is in space? </h1>
+</ br>
+<div id="peopleinspace">Fetching...</div>
+
+</ br>
+
+<h1>Fectch on click: </h1><button id='getspacepeople' onclick="getSpacePeopleFunction()">Get People in Space!</button>
+</ br>
+<div id="ButtonFetchedPeopleInSpace"></div>
+
+</body>

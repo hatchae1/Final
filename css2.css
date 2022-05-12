@@ -1,0 +1,48 @@
+body {
+    background-color: #1DB954;
+}
+
+#songs {
+    font-size: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 70px;
+    text-decoration: underline;
+}
+
+#img3 {
+    float:right;
+    border-color: white;
+    height: 350px;
+    padding-right: 50px;
+    position: relative; 
+  top: -400px;
+    
+
+}
+
+#img4 {
+    float:left;
+    border-color: white;
+    height: 350px;
+    padding-left: 50px;
+    position: relative; 
+  top: -400px;
+}
+
+#spotify {
+    position: relative; 
+    top: -350px;
+}
+a:hover {
+    color: rgb(255, 0, 0);
+  }
+
+  div.menudiv {
+      text-align: center;
+      margin: auto;
+      width: 50%;
+      padding: 20px;
+  }
